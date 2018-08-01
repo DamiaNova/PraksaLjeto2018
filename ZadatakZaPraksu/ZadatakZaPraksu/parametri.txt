@@ -11,3 +11,5 @@ X-position of the button: 350
 Button width: 100
 Button height: 50
 Button text: OK
+MessageBox name: Message box
+Empty TextBox MessageBox message: Niste unesli tekst.
