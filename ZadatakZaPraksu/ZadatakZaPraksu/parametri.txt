@@ -1,7 +1,8 @@
-500
-700
-Moj prozor
-240
-200
-200
-20
+/*Please make sure there's a space between ":" and the data. */
+Window height: 500
+Window width: 700
+Window name: Moj prozor
+Y-position of the TextBox: 240
+X-position of the TextBox: 200
+TextBox width: 200
+TextBox height: 20
