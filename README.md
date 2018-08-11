@@ -1,9 +1,13 @@
 #PraksaLjeto2018
+
 C++ desktop aplikacija: Qt verzija
 
 Vrsta: Qt widget application
+
 Base class: Qwidget
+
 Version control: None
+
 
 Kit: Desktop Qt 5.11.1 MSVC2015 32bit
 ---Uređaji: Desktop (Lokalni PC)
