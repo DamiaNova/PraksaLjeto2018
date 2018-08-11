@@ -1,2 +1,2 @@
 # PraksaLjeto2018
-C++ zadaci za praksu
+C++ desktop aplikacija -> QT i Win32 verzija
