@@ -1,2 +1,2 @@
 # PraksaLjeto2018
-C++ desktop aplikacija -> QT i Win32 verzija
+C++ desktop aplikacija: Win32 i Qt verzija
