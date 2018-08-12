@@ -1,11 +1,12 @@
 *****************************************
 C++ desktop aplikacija: Qt verzija
 *****************************************
-Vrsta: Qt widget application
-Base class: Qwidget
+Vrsta: Qt Main Window
+Base class: MainWindow
 Version control: None
 *****************************************
-Kit: Desktop Qt 5.11.1 MSVC2015 32bit 
+Kit: Desktop Qt 5.11.1 MinGW 32bit
 ---Ureðaji: Desktop (Lokalni PC) 
----Compiler: Microsoft Visual C++ 14.0 
----Qt verzija: Qt 5.11.1 MSVC2015 32bit
+---Compiler (C): MinGW 5.3.0 32bit for C
+---Compiler (C++): MinGW 5.3.0 32bit fro C++
+---Qt verzija: Qt 5.11.1
