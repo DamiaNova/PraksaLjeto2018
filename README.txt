@@ -15,7 +15,7 @@ Popis korištenih widget-a:
 Main window: 
 1) central widget:
 ---QLineEdit (input line za unos riječi)
----QPushButton (OK i Odustani gumb)
+---QPushButton (OK i Obriši gumb)
 ---groupBox (za opis):
 ------QLabel (za naslov i opis)
 2) menu bar:
