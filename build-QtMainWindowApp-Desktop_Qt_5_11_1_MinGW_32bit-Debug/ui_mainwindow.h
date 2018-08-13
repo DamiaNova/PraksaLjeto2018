@@ -34,6 +34,7 @@ public:
     QAction *actionDefault;
     QAction *actionCustom;
     QAction *actionInfo;
+    QAction *actionO_Qt_platformi;
     QWidget *centralWidget;
     QGroupBox *groupBox;
     QLabel *Naslov;
@@ -65,6 +66,8 @@ public:
         actionCustom->setObjectName(QStringLiteral("actionCustom"));
         actionInfo = new QAction(MainWindow);
         actionInfo->setObjectName(QStringLiteral("actionInfo"));
+        actionO_Qt_platformi = new QAction(MainWindow);
+        actionO_Qt_platformi->setObjectName(QStringLiteral("actionO_Qt_platformi"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         groupBox = new QGroupBox(centralWidget);
@@ -145,9 +148,10 @@ public:
         actionDefault->setText(QApplication::translate("MainWindow", "Zadani", nullptr));
         actionCustom->setText(QApplication::translate("MainWindow", "Prilago\304\221eni...", nullptr));
         actionInfo->setText(QApplication::translate("MainWindow", "O aplikaciji", nullptr));
+        actionO_Qt_platformi->setText(QApplication::translate("MainWindow", "O Qt platformi", nullptr));
         groupBox->setTitle(QString());
         Naslov->setText(QApplication::translate("MainWindow", "Dobrodo\305\241li u Qt aplikaciju!", nullptr));
-        OpisApp->setText(QApplication::translate("MainWindow", "Molimo unesite neku rije\304\215 (do 200 slova) i pritisnite \"OK\" gumb za nastavak. Za brisanje unesene rije\304\215i pritisnite \"Odustani\".", nullptr));
+        OpisApp->setText(QApplication::translate("MainWindow", "Molimo unesite neku rije\304\215 ili re\304\215enicu (do 200 slova) i pritisnite \"OK\" gumb za nastavak. Za brisanje unesene rije\304\215i pritisnite \"Odustani\".", nullptr));
         OKgumb->setText(QApplication::translate("MainWindow", "OK", nullptr));
         OdustaniGumb->setText(QApplication::translate("MainWindow", "Odustani", nullptr));
         menuJezik->setTitle(QApplication::translate("MainWindow", "Jezik", nullptr));

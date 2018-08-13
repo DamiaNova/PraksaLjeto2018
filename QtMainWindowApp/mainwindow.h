@@ -18,18 +18,10 @@ public:
 
 private slots:
     void on_OKgumb_clicked();
+    void on_OdustaniGumb_clicked();
 
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima
-};
-
-class MyMessageBox : public QMessageBox
-{
-   public:
-    MyMessageBox()  //<-- default constructor
-   {
-    setWindowTitle("Poruka"); //QMessageBox function
-   }
 };
 
 #endif // MAINWINDOW_H

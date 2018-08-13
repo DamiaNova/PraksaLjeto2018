@@ -68,7 +68,7 @@
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
-      <string>Molimo unesite neku riječ (do 200 slova) i pritisnite &quot;OK&quot; gumb za nastavak. Za brisanje unesene riječi pritisnite &quot;Odustani&quot;.</string>
+      <string>Molimo unesite neku riječ ili rečenicu (do 200 slova) i pritisnite &quot;OK&quot; gumb za nastavak. Za brisanje unesene riječi pritisnite &quot;Odustani&quot;.</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -215,6 +215,11 @@
   <action name="actionInfo">
    <property name="text">
     <string>O aplikaciji</string>
+   </property>
+  </action>
+  <action name="actionO_Qt_platformi">
+   <property name="text">
+    <string>O Qt platformi</string>
    </property>
   </action>
  </widget>
