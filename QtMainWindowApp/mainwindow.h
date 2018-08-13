@@ -2,21 +2,34 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 
 namespace Ui {
-class MainWindow;
+    class MainWindow; //govori mainwindow.ui file-u da uključi MainWindow u sebe
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
 {
-    Q_OBJECT
+    Q_OBJECT //MOC=Meta-Object Compiler, čita C++ header dokumente
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit MainWindow(QWidget *parent = nullptr); //konstruktor
+    ~MainWindow(); //destruktor
+
+private slots:
+    void on_OKgumb_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima
+};
+
+class MyMessageBox : public QMessageBox
+{
+   public:
+    MyMessageBox()  //<-- default constructor
+   {
+    setWindowTitle("Poruka"); //QMessageBox function
+   }
 };
 
 #endif // MAINWINDOW_H
