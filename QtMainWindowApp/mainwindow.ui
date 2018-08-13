@@ -68,7 +68,7 @@
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
-      <string>Molimo unesite neku riječ ili rečenicu (do 200 slova) i pritisnite &quot;OK&quot; gumb za nastavak. Za brisanje unesene riječi pritisnite &quot;Odustani&quot;.</string>
+      <string>Molimo unesite neki tekst (do 200 znakova) i pritisnite &quot;OK&quot; gumb za nastavak. Za brisanje unesenog teksta pritisnite &quot;Obriši&quot;.</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -109,7 +109,7 @@
      <string>OK</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="OdustaniGumb">
+   <widget class="QPushButton" name="ObrisiGumb">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -124,7 +124,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Odustani</string>
+     <string>Obriši</string>
     </property>
    </widget>
   </widget>

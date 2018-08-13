@@ -18,7 +18,8 @@ public:
 
 private slots:
     void on_OKgumb_clicked();
-    void on_OdustaniGumb_clicked();
+
+    void on_ObrisiGumb_clicked();
 
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima

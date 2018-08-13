@@ -14,6 +14,12 @@ MainWindow::~MainWindow() //desktrukor
     delete ui;
 }
 
+void MainWindow::on_ObrisiGumb_clicked()
+{
+    ui->InputLine->selectAll();
+    ui->InputLine->del();
+}
+
 //kada kliknemo gumb OK
 void MainWindow::on_OKgumb_clicked()
 {
@@ -22,13 +28,8 @@ void MainWindow::on_OKgumb_clicked()
     QString tekst="Unesli ste sljedeći tekst: \'";
     QString rijec = ui->InputLine->text(); //unesena riječ
     rijec.append("\'");
-    if ( (rijec.size() > 0) && (rijec.size() <= 200) ) msgBox.setText(tekst.append(rijec));
-    else if(rijec.size() > 200) msgBox.setText("Uneseni tekst ne smije biti dulji od 200 slova.");
-    else msgBox.setText("Nista unesli tekst.");
+    if ( (rijec.size() > 1) && (rijec.size() <= 200)) msgBox.setText(tekst.append(rijec));
+    else if(rijec.size() > 200) msgBox.setText("Uneseni tekst ne smije biti dulji od 200 znakova.");
+    else msgBox.setText("Niste unesli tekst.");
     msgBox.exec(); //prikazivanje MessageBox-a
-}
-
-void MainWindow::on_OdustaniGumb_clicked()
-{
-    //dodati funkciju koja briše uneseni text u InputLine
 }

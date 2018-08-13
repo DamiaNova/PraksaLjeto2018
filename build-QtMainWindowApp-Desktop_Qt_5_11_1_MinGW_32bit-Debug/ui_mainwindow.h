@@ -41,7 +41,7 @@ public:
     QLabel *OpisApp;
     QLineEdit *InputLine;
     QPushButton *OKgumb;
-    QPushButton *OdustaniGumb;
+    QPushButton *ObrisiGumb;
     QMenuBar *menuBar;
     QMenu *menuJezik;
     QMenu *menuParametri;
@@ -100,10 +100,10 @@ public:
         QFont font2;
         font2.setPointSize(9);
         OKgumb->setFont(font2);
-        OdustaniGumb = new QPushButton(centralWidget);
-        OdustaniGumb->setObjectName(QStringLiteral("OdustaniGumb"));
-        OdustaniGumb->setGeometry(QRect(50, 370, 121, 61));
-        OdustaniGumb->setFont(font2);
+        ObrisiGumb = new QPushButton(centralWidget);
+        ObrisiGumb->setObjectName(QStringLiteral("ObrisiGumb"));
+        ObrisiGumb->setGeometry(QRect(50, 370, 121, 61));
+        ObrisiGumb->setFont(font2);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -151,9 +151,9 @@ public:
         actionO_Qt_platformi->setText(QApplication::translate("MainWindow", "O Qt platformi", nullptr));
         groupBox->setTitle(QString());
         Naslov->setText(QApplication::translate("MainWindow", "Dobrodo\305\241li u Qt aplikaciju!", nullptr));
-        OpisApp->setText(QApplication::translate("MainWindow", "Molimo unesite neku rije\304\215 ili re\304\215enicu (do 200 slova) i pritisnite \"OK\" gumb za nastavak. Za brisanje unesene rije\304\215i pritisnite \"Odustani\".", nullptr));
+        OpisApp->setText(QApplication::translate("MainWindow", "Molimo unesite neki tekst (do 200 znakova) i pritisnite \"OK\" gumb za nastavak. Za brisanje unesenog teksta pritisnite \"Obri\305\241i\".", nullptr));
         OKgumb->setText(QApplication::translate("MainWindow", "OK", nullptr));
-        OdustaniGumb->setText(QApplication::translate("MainWindow", "Odustani", nullptr));
+        ObrisiGumb->setText(QApplication::translate("MainWindow", "Obri\305\241i", nullptr));
         menuJezik->setTitle(QApplication::translate("MainWindow", "Jezik", nullptr));
         menuParametri->setTitle(QApplication::translate("MainWindow", "Parametri", nullptr));
         menuInfo->setTitle(QApplication::translate("MainWindow", "Info", nullptr));
