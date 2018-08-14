@@ -128,6 +128,7 @@ void MainWindow::on_OKgumb_clicked()
     fontMsgBox.setUnderline(false);
     fontMsgBox.setPointSize(9);
     msgBox.setFont(fontMsgBox);
+    msgBox.setButtonText(1,"OK");
 
     tekst="Unesli ste sljedeći tekst: \'";
     krivi_unos = "Uneseni tekst ne smije biti dulji od 200 znakova.";

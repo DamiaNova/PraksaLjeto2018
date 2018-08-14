@@ -24,6 +24,27 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     QFont fontGumb;
     QFont ilFont;
     QCursor ilKursor;
+    struct JezikParametri{
+        QString menuJez;
+        QString menuPara;
+        QString menuInf;
+        QString actionHrv;
+        QString actionEng;
+        QString actionJap;
+        QString actionDef;
+        QString actionCust;
+        QString actionInf;
+        QString nasl;
+        QString opis;
+        QString obrGmb;
+        QString OKgmb;
+        QString msgBoxNaslov;
+        QString MainWinNaslov;
+        QString msgBxTekst;
+        QString msgBxKrivo;
+        QString msgBxPrazno;
+        QString msgBxGumb;
+    };
 
 public:
     explicit MainWindow(QWidget *parent = nullptr); //konstruktor
