@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QLineEdit>
 
 namespace Ui {
     class MainWindow; //govori mainwindow.ui file-u da uključi MainWindow u sebe
@@ -18,7 +19,6 @@ public:
 
 private slots:
     void on_OKgumb_clicked();
-
     void on_ObrisiGumb_clicked();
 
 private:

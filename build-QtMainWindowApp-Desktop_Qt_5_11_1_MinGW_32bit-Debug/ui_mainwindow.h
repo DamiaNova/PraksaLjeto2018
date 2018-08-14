@@ -93,6 +93,7 @@ public:
         InputLine = new QLineEdit(centralWidget);
         InputLine->setObjectName(QStringLiteral("InputLine"));
         InputLine->setGeometry(QRect(60, 300, 351, 31));
+        InputLine->setCursor(QCursor(Qt::SizeVerCursor));
         InputLine->setAlignment(Qt::AlignCenter);
         OKgumb = new QPushButton(centralWidget);
         OKgumb->setObjectName(QStringLiteral("OKgumb"));
@@ -107,7 +108,10 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 471, 26));
+        menuBar->setGeometry(QRect(0, 0, 471, 24));
+        QFont font3;
+        font3.setFamily(QStringLiteral("MS Shell Dlg 2"));
+        menuBar->setFont(font3);
         menuJezik = new QMenu(menuBar);
         menuJezik->setObjectName(QStringLiteral("menuJezik"));
         menuJezik->setGeometry(QRect(339, 116, 159, 126));

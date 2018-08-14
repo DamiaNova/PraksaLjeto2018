@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/resursi">
+        <file>icons/pingu.ico</file>
+        <file>icons/cat.ico</file>
+    </qresource>
+</RCC>
