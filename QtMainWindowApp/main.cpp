@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     //parametri za Main Window
     w.setFixedHeight(538);
     w.setFixedWidth(471);
-    w.setWindowTitle("My first app");
+    w.setWindowTitle("Moja prva aplikacija");
     QFont font;
     font.setFamily("MS Shell Dig 2");
     font.setPixelSize(8);

@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //parametri za InputLine (LineEdit widget)
     ui->InputLine->setPlaceholderText("");
-    QFont ilFont;
     ilFont.setFamily("MS Shell Dig 2");
     ilFont.setPixelSize(13);
     ilFont.setKerning(true);
@@ -19,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ilFont.setStrikeOut(false);
     ilFont.setUnderline(false);
     ui->InputLine->setFont(ilFont);
-    QCursor ilKursor;
     ilKursor.setShape(Qt::SizeVerCursor);
     ui->InputLine->setCursor(ilKursor);
     int x = 60;
@@ -49,7 +47,6 @@ MainWindow::MainWindow(QWidget *parent) :
         gumb->setPalette(pal);
         gumb->setFixedHeight(61);
         gumb->setFixedWidth(121);
-        QFont fontGumb;
         fontGumb.setFamily("MS Shell Dig 2");
         fontGumb.setPixelSize(8);
         fontGumb.setKerning(true);
@@ -75,8 +72,22 @@ MainWindow::MainWindow(QWidget *parent) :
     //parametri za QGroupBox
     ui->groupBox->setStyleSheet("background-color: lightgrey ;");
 
+    //parametri za tekst
+    ui->menuJezik->setTitle("Jezik");
+    ui->actionHrvatski->setText("Hrvatski");
+    ui->actionEngleski->setText("Engleski");
+    ui->actionJapanski->setText("Japanski");
+    ui->menuInfo->setTitle("Info");
+    ui->actionInfo->setText("O aplikaciji");
+    ui->menuParametri->setTitle("Parametri");
+    ui->actionCustom->setText("Prilagođeni...");
+    ui->actionDefault->setText("Zadani");
+    ui->Naslov->setText("Dobrodošli u QT aplikaciju!");
+    ui->OpisApp->setText("Molimo unesite neki tekst (do 200 znakova) i pritisnite \"OK\" gumb za nastavak. Za brisanje unesenog teksta pritisnite \"Obriši\".");
+    ui->OKgumb->setText("OK");
+    ui->ObrisiGumb->setText("Obriši");
+
     //parametri za QMenuBar
-    QFont fontMenu;
     fontMenu.setFamily("MS Shell Dig 2");
     fontMenu.setPixelSize(10);
     fontMenu.setKerning(true);
@@ -89,7 +100,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-MainWindow::~MainWindow() //desktrukor
+MainWindow::~MainWindow() //destrukor
 {
     delete ui;
 }
@@ -104,13 +115,10 @@ void MainWindow::on_ObrisiGumb_clicked()
 //kada kliknemo gumb OK
 void MainWindow::on_OKgumb_clicked()
 {
-    QMessageBox msgBox;
-
     //parametri za QMessageBox
     msgBox.setWindowTitle("Prozor"); //postavljanje naslova
     QPixmap ikonaMsgBox (":/resursi/icons/cat.ico");
     msgBox.setWindowIcon(ikonaMsgBox);
-    QFont fontMsgBox;
     fontMsgBox.setFamily("MS Shell Dig 2");
     fontMsgBox.setPixelSize(10);
     fontMsgBox.setKerning(true);
@@ -120,13 +128,16 @@ void MainWindow::on_OKgumb_clicked()
     fontMsgBox.setUnderline(false);
     fontMsgBox.setPointSize(9);
     msgBox.setFont(fontMsgBox);
-    QString tekst="Unesli ste sljedeći tekst: \'";
-    QString rijec = ui->InputLine->text(); //unesena riječ
+
+    tekst="Unesli ste sljedeći tekst: \'";
+    krivi_unos = "Uneseni tekst ne smije biti dulji od 200 znakova.";
+    prazan_unos = "Niste unesli tekst.";
+    rijec = ui->InputLine->text(); //unesena riječ
     rijec.append("\'");
 
     if ( (rijec.size() > 1) && (rijec.size() <= 200)) msgBox.setText(tekst.append(rijec));
-    else if(rijec.size() > 200) msgBox.setText("Uneseni tekst ne smije biti dulji od 200 znakova.");
-    else msgBox.setText("Niste unesli tekst.");
+    else if(rijec.size() > 200) msgBox.setText(krivi_unos);
+    else msgBox.setText(prazan_unos);
 
     msgBox.exec(); //prikazivanje MessageBox-a
 }

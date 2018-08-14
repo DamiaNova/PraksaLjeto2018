@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QLineEdit>
+#include <QFont>
 
 namespace Ui {
     class MainWindow; //govori mainwindow.ui file-u da uključi MainWindow u sebe
@@ -11,7 +12,18 @@ namespace Ui {
 
 class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
 {
-    Q_OBJECT //MOC=Meta-Object Compiler, čita C++ header dokumente
+    Q_OBJECT //MOC = Meta-Object Compiler, čita C++ header dokumente
+    //korištene varijable u programu:
+    QMessageBox msgBox;
+    QString tekst;
+    QString krivi_unos;
+    QString prazan_unos;
+    QString rijec;
+    QFont fontMsgBox;
+    QFont fontMenu;
+    QFont fontGumb;
+    QFont ilFont;
+    QCursor ilKursor;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr); //konstruktor

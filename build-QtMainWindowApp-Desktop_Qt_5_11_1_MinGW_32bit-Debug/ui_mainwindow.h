@@ -115,6 +115,7 @@ public:
         menuJezik = new QMenu(menuBar);
         menuJezik->setObjectName(QStringLiteral("menuJezik"));
         menuJezik->setGeometry(QRect(339, 116, 159, 126));
+        menuJezik->setFont(font3);
         menuParametri = new QMenu(menuBar);
         menuParametri->setObjectName(QStringLiteral("menuParametri"));
         menuParametri->setGeometry(QRect(386, 116, 159, 102));
