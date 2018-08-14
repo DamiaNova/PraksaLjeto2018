@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include "jezik.h"
+#include "jezik.cpp"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), //konstruktor
@@ -72,8 +74,12 @@ MainWindow::MainWindow(QWidget *parent) :
     //parametri za QGroupBox
     ui->groupBox->setStyleSheet("background-color: lightgrey ;");
 
+    QString putanja = ":/resursi/parametri/hrvatski.txt";
+    jezik hrvatski;
+    hrvatski.ucitavanjeParametara(putanja);
+
     //parametri za tekst
-    ui->menuJezik->setTitle("Jezik");
+    ui->menuJezik->setTitle(hrvatski.menuJez);
     ui->actionHrvatski->setText("Hrvatski");
     ui->actionEngleski->setText("Engleski");
     ui->actionJapanski->setText("Japanski");

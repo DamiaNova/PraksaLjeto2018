@@ -24,10 +24,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    jezik.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    jezik.h
 
 FORMS += \
         mainwindow.ui
