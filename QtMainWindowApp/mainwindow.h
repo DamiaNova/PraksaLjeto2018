@@ -15,11 +15,13 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     Q_OBJECT //MOC = Meta-Object Compiler, čita C++ header dokumente
     //korištene varijable u programu:
     QMessageBox msgBox;
+    QMessageBox prozor;
     QString tekst;
     QString krivi_unos;
     QString prazan_unos;
     QString rijec;
     QFont fontMsgBox;
+    QFont fontProzor;
     QFont fontMenu;
     QFont fontGumb;
     QFont ilFont;
@@ -38,6 +40,8 @@ private slots:
     void on_actionHrvatski_triggered();
 
     void on_actionSpanjolski_triggered();
+
+    void on_actionInfo_triggered();
 
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima

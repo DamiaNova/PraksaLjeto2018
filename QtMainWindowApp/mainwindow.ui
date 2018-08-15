@@ -169,8 +169,8 @@
    <widget class="QMenu" name="menuParametri">
     <property name="geometry">
      <rect>
-      <x>386</x>
-      <y>116</y>
+      <x>385</x>
+      <y>114</y>
       <width>159</width>
       <height>102</height>
      </rect>
@@ -228,11 +228,6 @@
   <action name="actionInfo">
    <property name="text">
     <string>O aplikaciji</string>
-   </property>
-  </action>
-  <action name="actionO_Qt_platformi">
-   <property name="text">
-    <string>O Qt platformi</string>
    </property>
   </action>
  </widget>

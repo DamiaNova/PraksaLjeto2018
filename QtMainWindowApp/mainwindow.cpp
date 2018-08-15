@@ -224,3 +224,22 @@ void MainWindow::on_actionSpanjolski_triggered()
     prazan_unos = spanjolski.msgBxPrazno;
 }
 
+
+void MainWindow::on_actionInfo_triggered()
+{
+    QPixmap ikonaProzor (":/resursi/icons/cat.ico");
+    if (prozor.windowTitle()=="") { prozor.setWindowTitle("O aplikaciji"); }
+    prozor.setWindowIcon(ikonaProzor);
+    fontProzor.setFamily("MS Shell Dig 2");
+    fontProzor.setPixelSize(10);
+    fontProzor.setKerning(true);
+    fontProzor.setItalic(false);
+    fontProzor.setBold(false);
+    fontProzor.setStrikeOut(false);
+    fontProzor.setUnderline(false);
+    fontProzor.setPointSize(9);
+    prozor.setFont(fontProzor);
+    prozor.setButtonText(1,"OK");
+    prozor.setText("Ovo je aplikacija izrađena pomoću QT platforme za razvoj aplikacija.");
+    prozor.exec();
+}
