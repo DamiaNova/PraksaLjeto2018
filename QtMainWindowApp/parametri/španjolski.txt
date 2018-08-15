@@ -16,4 +16,3 @@ mainWindowNaslov: "Mi primera aplicación"
 messageBoxTekst: "Has ingresado el siguiente texto: '"
 messageBoxKriviUnos: "El texto ingresado no debe tener más de 200 caracteres".
 messageBoxPrazanUnos: "No has escrito nada".
-messageBoxGumb: "OK"

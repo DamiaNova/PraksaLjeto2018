@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>My App</string>
+   <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QGroupBox" name="groupBox">
@@ -32,9 +32,9 @@
     <widget class="QLabel" name="Naslov">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>30</y>
-       <width>371</width>
+       <width>391</width>
        <height>61</height>
       </rect>
      </property>

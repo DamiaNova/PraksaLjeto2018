@@ -92,19 +92,12 @@ MainWindow::~MainWindow() //destrukor
     delete ui;
 }
 
-//kada kliknemo gumb Obriši
-void MainWindow::on_ObrisiGumb_clicked()
-{
-    ui->InputLine->selectAll();
-    ui->InputLine->del();
-}
-
 //kada kliknemo gumb OK
 void MainWindow::on_OKgumb_clicked()
 {
     //parametri za QMessageBox
-    msgBox.setWindowTitle("Prozor"); //postavljanje naslova
     QPixmap ikonaMsgBox (":/resursi/icons/cat.ico");
+    if (msgBox.windowTitle()=="") { msgBox.setWindowTitle("Prozor"); };
     msgBox.setWindowIcon(ikonaMsgBox);
     fontMsgBox.setFamily("MS Shell Dig 2");
     fontMsgBox.setPixelSize(10);
@@ -117,9 +110,10 @@ void MainWindow::on_OKgumb_clicked()
     msgBox.setFont(fontMsgBox);
     msgBox.setButtonText(1,"OK");
 
-    tekst="Unesli ste sljedeći tekst: \'";
+    tekst = "Unesli ste sljedeći tekst: \'";
     krivi_unos = "Uneseni tekst ne smije biti dulji od 200 znakova.";
     prazan_unos = "Niste unesli tekst.";
+
     rijec = ui->InputLine->text(); //unesena riječ
     rijec.append("\'");
 
@@ -129,6 +123,14 @@ void MainWindow::on_OKgumb_clicked()
 
     msgBox.exec(); //prikazivanje MessageBox-a
 }
+
+//kada kliknemo gumb Obriši
+void MainWindow::on_ObrisiGumb_clicked()
+{
+    ui->InputLine->selectAll();
+    ui->InputLine->del();
+}
+
 
 void MainWindow::on_actionEngleski_triggered()
 {
@@ -149,6 +151,11 @@ void MainWindow::on_actionEngleski_triggered()
     ui->OpisApp->setText(engleski.opis);
     ui->OKgumb->setText(engleski.OKgmb);
     ui->ObrisiGumb->setText(engleski.obrGmb);
+    this->setWindowTitle(engleski.MainWinNaslov);
+    msgBox.setWindowTitle(engleski.msgBoxNaslov);
+    tekst = engleski.msgBxTekst;
+    krivi_unos = engleski.msgBxKrivo;
+    prazan_unos = engleski.msgBxPrazno;
 }
 
 void MainWindow::on_actionHrvatski_triggered()
@@ -171,6 +178,11 @@ void MainWindow::on_actionHrvatski_triggered()
     ui->OpisApp->setText(hrvatski.opis);
     ui->OKgumb->setText(hrvatski.OKgmb);
     ui->ObrisiGumb->setText(hrvatski.obrGmb);
+    this->setWindowTitle(hrvatski.MainWinNaslov);
+    msgBox.setWindowTitle(hrvatski.msgBoxNaslov);
+    tekst = hrvatski.msgBxTekst;
+    krivi_unos = hrvatski.msgBxKrivo;
+    prazan_unos = hrvatski.msgBxPrazno;
 }
 
 void MainWindow::on_actionSpanjolski_triggered()
@@ -193,4 +205,10 @@ void MainWindow::on_actionSpanjolski_triggered()
     ui->OpisApp->setText(spanjolski.opis);
     ui->OKgumb->setText(spanjolski.OKgmb);
     ui->ObrisiGumb->setText(spanjolski.obrGmb);
+    this->setWindowTitle(spanjolski.MainWinNaslov);
+    msgBox.setWindowTitle(spanjolski.msgBoxNaslov);
+    tekst = spanjolski.msgBxTekst;
+    krivi_unos = spanjolski.msgBxKrivo;
+    prazan_unos = spanjolski.msgBxPrazno;
 }
+

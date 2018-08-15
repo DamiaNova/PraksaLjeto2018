@@ -76,7 +76,7 @@ public:
         groupBox->setAlignment(Qt::AlignCenter);
         Naslov = new QLabel(groupBox);
         Naslov->setObjectName(QStringLiteral("Naslov"));
-        Naslov->setGeometry(QRect(10, 30, 371, 61));
+        Naslov->setGeometry(QRect(0, 30, 391, 61));
         QFont font;
         font.setPointSize(17);
         Naslov->setFont(font);
@@ -146,7 +146,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "My App", nullptr));
+        MainWindow->setWindowTitle(QString());
         actionHrvatski->setText(QApplication::translate("MainWindow", "Hrvatski", nullptr));
         actionEngleski->setText(QApplication::translate("MainWindow", "Engleski", nullptr));
         actionSpanjolski->setText(QApplication::translate("MainWindow", "\305\240panjolski", nullptr));

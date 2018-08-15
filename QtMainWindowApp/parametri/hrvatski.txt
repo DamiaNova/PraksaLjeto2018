@@ -16,6 +16,5 @@ mainWindowNaslov: "Moja prva aplikacija"
 messageBoxTekst: "Unesli ste sljedeći tekst: '"
 messageBoxKriviUnos: "Uneseni tekst ne smije biti dulji od 200 znakova."
 messageBoxPrazanUnos: "Niste unesli tekst."
-messageBoxGumb: "OK"
 
 
