@@ -33,6 +33,10 @@ private slots:
     void on_OKgumb_clicked();
     void on_ObrisiGumb_clicked();
 
+    void on_actionEngleski_triggered();
+
+    void on_actionHrvatski_triggered();
+
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima
 };

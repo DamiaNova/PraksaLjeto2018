@@ -74,25 +74,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //parametri za QGroupBox
     ui->groupBox->setStyleSheet("background-color: lightgrey ;");
 
-    QString putanja = ":/resursi/parametri/hrvatski.txt";
-    jezik hrvatski;
-    hrvatski.ucitavanjeParametara(putanja);
-
-    //parametri za tekst
-    ui->menuJezik->setTitle(hrvatski.menuJez);
-    ui->actionHrvatski->setText(hrvatski.actionHrv);
-    ui->actionEngleski->setText(hrvatski.actionEng);
-    ui->actionJapanski->setText(hrvatski.actionJap);
-    ui->menuInfo->setTitle(hrvatski.menuInf);
-    ui->actionInfo->setText(hrvatski.actionInf);
-    ui->menuParametri->setTitle(hrvatski.menuPara);
-    ui->actionCustom->setText(hrvatski.actionCust);
-    ui->actionDefault->setText(hrvatski.actionDef);
-    ui->Naslov->setText(hrvatski.nasl);
-    ui->OpisApp->setText(hrvatski.opis);
-    ui->OKgumb->setText(hrvatski.OKgmb);
-    ui->ObrisiGumb->setText(hrvatski.obrGmb);
-
     //parametri za QMenuBar
     fontMenu.setFamily("MS Shell Dig 2");
     fontMenu.setPixelSize(10);
@@ -147,4 +128,47 @@ void MainWindow::on_OKgumb_clicked()
     else msgBox.setText(prazan_unos);
 
     msgBox.exec(); //prikazivanje MessageBox-a
+}
+
+void MainWindow::on_actionEngleski_triggered()
+{
+    QString putanja = ":/resursi/parametri/engleski.txt";
+    jezik engleski;
+    engleski.ucitavanjeParametara(putanja);
+    //parametri za tekst
+    ui->menuJezik->setTitle(engleski.menuJez);
+    ui->actionHrvatski->setText(engleski.actionHrv);
+    ui->actionEngleski->setText(engleski.actionEng);
+    ui->actionJapanski->setText(engleski.actionJap);
+    ui->menuInfo->setTitle(engleski.menuInf);
+    ui->actionInfo->setText(engleski.actionInf);
+    ui->menuParametri->setTitle(engleski.menuPara);
+    ui->actionCustom->setText(engleski.actionCust);
+    ui->actionDefault->setText(engleski.actionDef);
+    ui->Naslov->setText(engleski.nasl);
+    ui->OpisApp->setText(engleski.opis);
+    ui->OKgumb->setText(engleski.OKgmb);
+    ui->ObrisiGumb->setText(engleski.obrGmb);
+}
+
+void MainWindow::on_actionHrvatski_triggered()
+{
+    QString putanja = ":/resursi/parametri/hrvatski.txt";
+    jezik hrvatski;
+    hrvatski.ucitavanjeParametara(putanja);
+
+    //parametri za tekst
+    ui->menuJezik->setTitle(hrvatski.menuJez);
+    ui->actionHrvatski->setText(hrvatski.actionHrv);
+    ui->actionEngleski->setText(hrvatski.actionEng);
+    ui->actionJapanski->setText(hrvatski.actionJap);
+    ui->menuInfo->setTitle(hrvatski.menuInf);
+    ui->actionInfo->setText(hrvatski.actionInf);
+    ui->menuParametri->setTitle(hrvatski.menuPara);
+    ui->actionCustom->setText(hrvatski.actionCust);
+    ui->actionDefault->setText(hrvatski.actionDef);
+    ui->Naslov->setText(hrvatski.nasl);
+    ui->OpisApp->setText(hrvatski.opis);
+    ui->OKgumb->setText(hrvatski.OKgmb);
+    ui->ObrisiGumb->setText(hrvatski.obrGmb);
 }

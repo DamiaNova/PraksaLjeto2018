@@ -3,5 +3,6 @@
         <file>icons/pingu.ico</file>
         <file>icons/cat.ico</file>
         <file>parametri/hrvatski.txt</file>
+        <file>parametri/engleski.txt</file>
     </qresource>
 </RCC>
