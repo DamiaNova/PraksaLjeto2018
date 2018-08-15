@@ -28,14 +28,16 @@ SOURCES += \
     jezik.cpp \
     inputline.cpp \
     gumbi.cpp \
-    ostaliparametri.cpp
+    ostaliparametri.cpp \
+    messagebox.cpp
 
 HEADERS += \
         mainwindow.h \
     jezik.h \
     inputline.h \
     gumbi.h \
-    ostaliparametri.h
+    ostaliparametri.h \
+    messagebox.h
 
 FORMS += \
         mainwindow.ui

@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include "messagebox.h"
 
 #include <QMainWindow>
 #include <QMessageBox>
@@ -15,6 +16,7 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     Q_OBJECT //MOC = Meta-Object Compiler, čita C++ header dokumente
     //korištene varijable u programu:
     QMessageBox msgBox;
+    messagebox2 mBox;
     QMessageBox prozor;
     QString tekst;
     QString krivi_unos;

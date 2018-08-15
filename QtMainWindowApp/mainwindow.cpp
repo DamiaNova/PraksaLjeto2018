@@ -7,6 +7,7 @@
 #include "inputline.cpp"
 #include "gumbi.h"
 #include "ostaliparametri.h"
+#include "messagebox.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -16,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this); //objekt se zove "setupUi" koji otvara naš prozor
 
      ui->actionHrvatski->triggered(true);
+     mBox.ucitavanjeMsgBoxPar();
 
     //parametri za InputLine (LineEdit widget)
     inputline inputPar;
@@ -114,6 +116,7 @@ void MainWindow::on_ObrisiGumb_clicked()
     ui->InputLine->del();
 }
 
+
 //kada kliknemo gumb OK
 void MainWindow::on_OKgumb_clicked()
 {
@@ -121,16 +124,16 @@ void MainWindow::on_OKgumb_clicked()
     QPixmap ikonaMsgBox (":/resursi/icons/cat.ico");
     if (msgBox.windowTitle()=="") { msgBox.setWindowTitle("Prozor"); }
     msgBox.setWindowIcon(ikonaMsgBox);
-    fontMsgBox.setFamily("MS Shell Dig 2");
-    fontMsgBox.setPixelSize(10);
-    fontMsgBox.setKerning(true);
-    fontMsgBox.setItalic(false);
-    fontMsgBox.setBold(false);
-    fontMsgBox.setStrikeOut(false);
-    fontMsgBox.setUnderline(false);
-    fontMsgBox.setPointSize(9);
+    fontMsgBox.setFamily(mBox.fontFam);
+    fontMsgBox.setPixelSize(mBox.fontSiz);
+    fontMsgBox.setKerning(mBox.fontKer);
+    fontMsgBox.setItalic(mBox.fontIta);
+    fontMsgBox.setBold(mBox.fontBol);
+    fontMsgBox.setStrikeOut(mBox.fontStrik);
+    fontMsgBox.setUnderline(mBox.fontUnderl);
+    fontMsgBox.setPointSize(mBox.pointSiz);
     msgBox.setFont(fontMsgBox);
-    msgBox.setButtonText(1,"OK");
+    msgBox.setButtonText(1,mBox.btnTxt);
 
     rijec = ui->InputLine->text(); //unesena riječ
     int duljinaRijeci = rijec.length();
@@ -236,16 +239,16 @@ void MainWindow::on_actionInfo_triggered()
 {
     QPixmap ikonaProzor (":/resursi/icons/turtle.ico");
     prozor.setWindowIcon(ikonaProzor);
-    fontProzor.setFamily("MS Shell Dig 2");
-    fontProzor.setPixelSize(12);
-    fontProzor.setKerning(true);
-    fontProzor.setItalic(false);
-    fontProzor.setBold(false);
-    fontProzor.setStrikeOut(false);
-    fontProzor.setUnderline(false);
-    fontProzor.setPointSize(8);
+    fontProzor.setFamily(mBox.fontFam);
+    fontProzor.setPixelSize(mBox.fontSiz);
+    fontProzor.setKerning(mBox.fontKer);
+    fontProzor.setItalic(mBox.fontIta);
+    fontProzor.setBold(mBox.fontBol);
+    fontProzor.setStrikeOut(mBox.fontStrik);
+    fontProzor.setUnderline(mBox.fontUnderl);
+    fontProzor.setPointSize(mBox.pointSiz);
     prozor.setFont(fontProzor);
-    prozor.setButtonText(1,"OK");
-    prozor.setIconPixmap(QPixmap(":/resursi/icons/computer.ico"));
+    prozor.setButtonText(1,mBox.btnTxt);
+    prozor.setIconPixmap(QPixmap(mBox.putanjaIcon));
     prozor.exec();
 }

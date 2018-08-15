@@ -16,5 +16,6 @@
         <file>icons/spanish.ico</file>
         <file>icons/custom.ico</file>
         <file>icons/default.ico</file>
+        <file>parametri/messageBox.txt</file>
     </qresource>
 </RCC>
