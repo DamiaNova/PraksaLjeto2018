@@ -16,5 +16,6 @@ mainWindowNaslov: "My first App"
 messageBoxTekst: "You have entered the following text: '"
 messageBoxKriviUnos: "The entered text should not be longer than 200 characters."
 messageBoxPrazanUnos: "You haven't typed anything."
+messageBoxProzorTekst: "This application has been made with cross-platform application framework and widget toolkit for creating classic and embedded graphical user interfaces, and applications that run on various software and hardware platforms. The application was made for internship at PKE sistemi d.o.o during August 2018. Author: Mia Blažeković"
 
 

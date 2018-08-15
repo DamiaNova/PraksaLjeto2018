@@ -8,5 +8,13 @@
         <file>parametri/QLineEdit.txt</file>
         <file>parametri/gumbi.txt</file>
         <file>parametri/ostaliParametri.txt</file>
+        <file>icons/computer.ico</file>
+        <file>icons/turtle.ico</file>
+        <file>icons/info.ico</file>
+        <file>icons/cro.ico</file>
+        <file>icons/english.ico</file>
+        <file>icons/spanish.ico</file>
+        <file>icons/custom.ico</file>
+        <file>icons/default.ico</file>
     </qresource>
 </RCC>

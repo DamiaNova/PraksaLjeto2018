@@ -150,7 +150,7 @@
      <rect>
       <x>339</x>
       <y>114</y>
-      <width>155</width>
+      <width>163</width>
       <height>126</height>
      </rect>
     </property>
@@ -171,8 +171,8 @@
      <rect>
       <x>385</x>
       <y>114</y>
-      <width>159</width>
-      <height>102</height>
+      <width>167</width>
+      <height>106</height>
      </rect>
     </property>
     <property name="title">
@@ -201,37 +201,63 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionHrvatski">
+   <property name="icon">
+    <iconset resource="resursi.qrc">
+     <normaloff>:/resursi/icons/cro.ico</normaloff>:/resursi/icons/cro.ico</iconset>
+   </property>
    <property name="text">
     <string>Hrvatski</string>
    </property>
   </action>
   <action name="actionEngleski">
+   <property name="icon">
+    <iconset resource="resursi.qrc">
+     <normaloff>:/resursi/icons/english.ico</normaloff>:/resursi/icons/english.ico</iconset>
+   </property>
    <property name="text">
     <string>Engleski</string>
    </property>
   </action>
   <action name="actionSpanjolski">
+   <property name="icon">
+    <iconset resource="resursi.qrc">
+     <normaloff>:/resursi/icons/spanish.ico</normaloff>:/resursi/icons/spanish.ico</iconset>
+   </property>
    <property name="text">
     <string>Španjolski</string>
    </property>
   </action>
   <action name="actionDefault">
+   <property name="icon">
+    <iconset resource="resursi.qrc">
+     <normaloff>:/resursi/icons/default.ico</normaloff>:/resursi/icons/default.ico</iconset>
+   </property>
    <property name="text">
     <string>Zadani</string>
    </property>
   </action>
   <action name="actionCustom">
+   <property name="icon">
+    <iconset resource="resursi.qrc">
+     <normaloff>:/resursi/icons/custom.ico</normaloff>:/resursi/icons/custom.ico</iconset>
+   </property>
    <property name="text">
     <string>Prilagođeni...</string>
    </property>
   </action>
   <action name="actionInfo">
+   <property name="icon">
+    <iconset resource="resursi.qrc">
+     <normaloff>:/resursi/icons/info.ico</normaloff>:/resursi/icons/info.ico</iconset>
+   </property>
    <property name="text">
     <string>O aplikaciji</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resursi.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -7,6 +7,7 @@
 #include "inputline.cpp"
 #include "gumbi.h"
 #include "ostaliparametri.h"
+#include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), //konstruktor
@@ -165,6 +166,8 @@ void MainWindow::on_actionEngleski_triggered()
     ui->ObrisiGumb->setText(engleski.obrGmb);
     this->setWindowTitle(engleski.MainWinNaslov);
     msgBox.setWindowTitle(engleski.msgBoxNaslov);
+    prozor.setWindowTitle(engleski.msgBoxNaslov);
+    prozor.setText(engleski.prozorTekst);
     tekst = engleski.msgBxTekst;
     krivi_unos = engleski.msgBxKrivo;
     prazan_unos = engleski.msgBxPrazno;
@@ -192,6 +195,8 @@ void MainWindow::on_actionHrvatski_triggered()
     ui->ObrisiGumb->setText(hrvatski.obrGmb);
     this->setWindowTitle(hrvatski.MainWinNaslov);
     msgBox.setWindowTitle(hrvatski.msgBoxNaslov);
+    prozor.setWindowTitle(hrvatski.msgBoxNaslov);
+    prozor.setText(hrvatski.prozorTekst);
     tekst = hrvatski.msgBxTekst;
     krivi_unos = hrvatski.msgBxKrivo;
     prazan_unos = hrvatski.msgBxPrazno;
@@ -219,6 +224,8 @@ void MainWindow::on_actionSpanjolski_triggered()
     ui->ObrisiGumb->setText(spanjolski.obrGmb);
     this->setWindowTitle(spanjolski.MainWinNaslov);
     msgBox.setWindowTitle(spanjolski.msgBoxNaslov);
+    prozor.setWindowTitle(spanjolski.msgBoxNaslov);
+    prozor.setText(spanjolski.prozorTekst);
     tekst = spanjolski.msgBxTekst;
     krivi_unos = spanjolski.msgBxKrivo;
     prazan_unos = spanjolski.msgBxPrazno;
@@ -227,19 +234,18 @@ void MainWindow::on_actionSpanjolski_triggered()
 
 void MainWindow::on_actionInfo_triggered()
 {
-    QPixmap ikonaProzor (":/resursi/icons/cat.ico");
-    if (prozor.windowTitle()=="") { prozor.setWindowTitle("O aplikaciji"); }
+    QPixmap ikonaProzor (":/resursi/icons/turtle.ico");
     prozor.setWindowIcon(ikonaProzor);
     fontProzor.setFamily("MS Shell Dig 2");
-    fontProzor.setPixelSize(10);
+    fontProzor.setPixelSize(12);
     fontProzor.setKerning(true);
     fontProzor.setItalic(false);
     fontProzor.setBold(false);
     fontProzor.setStrikeOut(false);
     fontProzor.setUnderline(false);
-    fontProzor.setPointSize(9);
+    fontProzor.setPointSize(8);
     prozor.setFont(fontProzor);
     prozor.setButtonText(1,"OK");
-    prozor.setText("Ovo je aplikacija izrađena pomoću QT platforme za razvoj aplikacija.");
+    prozor.setIconPixmap(QPixmap(":/resursi/icons/computer.ico"));
     prozor.exec();
 }

@@ -26,6 +26,7 @@ public:
         QString msgBxTekst;
         QString msgBxKrivo;
         QString msgBxPrazno;
+        QString prozorTekst;
 };
 
 #endif // JEZIK_H
