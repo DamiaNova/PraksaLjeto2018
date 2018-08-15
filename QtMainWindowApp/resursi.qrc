@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/resursi">
+        <file>icons/pingu.ico</file>
+        <file>icons/cat.ico</file>
+        <file>parametri/hrvatski.txt</file>
+        <file>parametri/engleski.txt</file>
+        <file>parametri/španjolski.txt</file>
+        <file>parametri/QLineEdit.txt</file>
+        <file>parametri/gumbi.txt</file>
+        <file>parametri/ostaliParametri.txt</file>
+        <file>icons/computer.ico</file>
+        <file>icons/turtle.ico</file>
+        <file>icons/info.ico</file>
+        <file>icons/cro.ico</file>
+        <file>icons/english.ico</file>
+        <file>icons/spanish.ico</file>
+        <file>icons/custom.ico</file>
+        <file>icons/default.ico</file>
+        <file>parametri/messageBox.txt</file>
+        <file>icons/computer2.ico</file>
+        <file>icons/computer3.ico</file>
+        <file>icons/bird.ico</file>
+    </qresource>
+</RCC>
