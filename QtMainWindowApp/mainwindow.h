@@ -45,6 +45,8 @@ private slots:
 
     void on_actionInfo_triggered();
 
+    void on_actionCustom_triggered();
+
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima
 };

@@ -29,7 +29,8 @@ SOURCES += \
     inputline.cpp \
     gumbi.cpp \
     ostaliparametri.cpp \
-    messagebox.cpp
+    messagebox.cpp \
+    izborikona.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -37,10 +38,12 @@ HEADERS += \
     inputline.h \
     gumbi.h \
     ostaliparametri.h \
-    messagebox.h
+    messagebox.h \
+    izborikona.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    izborikona.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

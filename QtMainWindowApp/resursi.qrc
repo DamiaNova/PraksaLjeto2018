@@ -17,5 +17,8 @@
         <file>icons/custom.ico</file>
         <file>icons/default.ico</file>
         <file>parametri/messageBox.txt</file>
+        <file>icons/computer2.ico</file>
+        <file>icons/computer3.ico</file>
+        <file>icons/bird.ico</file>
     </qresource>
 </RCC>

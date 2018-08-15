@@ -8,6 +8,7 @@
 #include "gumbi.h"
 #include "ostaliparametri.h"
 #include "messagebox.h"
+#include "izborikona.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -251,4 +252,11 @@ void MainWindow::on_actionInfo_triggered()
     prozor.setButtonText(1,mBox.btnTxt);
     prozor.setIconPixmap(QPixmap(mBox.putanjaIcon));
     prozor.exec();
+}
+
+void MainWindow::on_actionCustom_triggered()
+{
+    izborIkona izbIkona;
+    izbIkona.setModal(true);
+    izbIkona.exec();
 }
