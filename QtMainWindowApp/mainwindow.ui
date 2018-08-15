@@ -164,7 +164,7 @@
     </property>
     <addaction name="actionHrvatski"/>
     <addaction name="actionEngleski"/>
-    <addaction name="actionJapanski"/>
+    <addaction name="actionSpanjolski"/>
    </widget>
    <widget class="QMenu" name="menuParametri">
     <property name="geometry">
@@ -210,9 +210,9 @@
     <string>Engleski</string>
    </property>
   </action>
-  <action name="actionJapanski">
+  <action name="actionSpanjolski">
    <property name="text">
-    <string>Japanski</string>
+    <string>Španjolski</string>
    </property>
   </action>
   <action name="actionDefault">

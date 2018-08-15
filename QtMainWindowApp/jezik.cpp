@@ -23,7 +23,7 @@ void jezik::ucitavanjeParametara(QString putanja){
                 if (linija.contains("menuJezik:",Qt::CaseSensitive)){ menuJez = par;}
                 else if (linija.contains("actionHrvatski:",Qt::CaseSensitive)){ actionHrv = par;}
                 else if (linija.contains("actionEngleski:",Qt::CaseSensitive)){ actionEng = par;}
-                else if (linija.contains("actionJapanski:",Qt::CaseSensitive)){ actionJap = par;}
+                else if (linija.contains("actionSpanjolski:",Qt::CaseSensitive)){ actionSpa = par;}
                 else if (linija.contains("menuParametri:",Qt::CaseSensitive)){ menuPara = par;}
                 else if (linija.contains("actionDefault:",Qt::CaseSensitive)){ actionDef = par;}
                 else if (linija.contains("actionCustom:",Qt::CaseSensitive)){ actionCust = par;}

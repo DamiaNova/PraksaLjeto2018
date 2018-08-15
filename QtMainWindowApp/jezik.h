@@ -13,7 +13,7 @@ public:
         QString menuInf;
         QString actionHrv;
         QString actionEng;
-        QString actionJap;
+        QString actionSpa;
         QString actionDef;
         QString actionCust;
         QString actionInf;

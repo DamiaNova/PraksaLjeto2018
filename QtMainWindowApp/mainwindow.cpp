@@ -139,7 +139,7 @@ void MainWindow::on_actionEngleski_triggered()
     ui->menuJezik->setTitle(engleski.menuJez);
     ui->actionHrvatski->setText(engleski.actionHrv);
     ui->actionEngleski->setText(engleski.actionEng);
-    ui->actionJapanski->setText(engleski.actionJap);
+    ui->actionSpanjolski->setText(engleski.actionSpa);
     ui->menuInfo->setTitle(engleski.menuInf);
     ui->actionInfo->setText(engleski.actionInf);
     ui->menuParametri->setTitle(engleski.menuPara);
@@ -161,7 +161,7 @@ void MainWindow::on_actionHrvatski_triggered()
     ui->menuJezik->setTitle(hrvatski.menuJez);
     ui->actionHrvatski->setText(hrvatski.actionHrv);
     ui->actionEngleski->setText(hrvatski.actionEng);
-    ui->actionJapanski->setText(hrvatski.actionJap);
+    ui->actionSpanjolski->setText(hrvatski.actionSpa);
     ui->menuInfo->setTitle(hrvatski.menuInf);
     ui->actionInfo->setText(hrvatski.actionInf);
     ui->menuParametri->setTitle(hrvatski.menuPara);
@@ -171,4 +171,26 @@ void MainWindow::on_actionHrvatski_triggered()
     ui->OpisApp->setText(hrvatski.opis);
     ui->OKgumb->setText(hrvatski.OKgmb);
     ui->ObrisiGumb->setText(hrvatski.obrGmb);
+}
+
+void MainWindow::on_actionSpanjolski_triggered()
+{
+    QString putanja = ":/resursi/parametri/španjolski.txt";
+    jezik spanjolski;
+    spanjolski.ucitavanjeParametara(putanja);
+
+    //parametri za tekst
+    ui->menuJezik->setTitle(spanjolski.menuJez);
+    ui->actionHrvatski->setText(spanjolski.actionHrv);
+    ui->actionEngleski->setText(spanjolski.actionEng);
+    ui->actionSpanjolski->setText(spanjolski.actionSpa);
+    ui->menuInfo->setTitle(spanjolski.menuInf);
+    ui->actionInfo->setText(spanjolski.actionInf);
+    ui->menuParametri->setTitle(spanjolski.menuPara);
+    ui->actionCustom->setText(spanjolski.actionCust);
+    ui->actionDefault->setText(spanjolski.actionDef);
+    ui->Naslov->setText(spanjolski.nasl);
+    ui->OpisApp->setText(spanjolski.opis);
+    ui->OKgumb->setText(spanjolski.OKgmb);
+    ui->ObrisiGumb->setText(spanjolski.obrGmb);
 }

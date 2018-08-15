@@ -37,6 +37,8 @@ private slots:
 
     void on_actionHrvatski_triggered();
 
+    void on_actionSpanjolski_triggered();
+
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima
 };
