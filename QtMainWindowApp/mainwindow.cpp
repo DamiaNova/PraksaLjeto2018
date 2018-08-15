@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this); //objekt se zove "setupUi" koji otvara naš prozor
 
+     ui->actionHrvatski->triggered(true);
+
     //parametri za InputLine (LineEdit widget)
     ui->InputLine->setPlaceholderText("");
     ilFont.setFamily("MS Shell Dig 2");
@@ -92,12 +94,19 @@ MainWindow::~MainWindow() //destrukor
     delete ui;
 }
 
+//kada kliknemo gumb Obriši
+void MainWindow::on_ObrisiGumb_clicked()
+{
+    ui->InputLine->selectAll();
+    ui->InputLine->del();
+}
+
 //kada kliknemo gumb OK
 void MainWindow::on_OKgumb_clicked()
 {
     //parametri za QMessageBox
     QPixmap ikonaMsgBox (":/resursi/icons/cat.ico");
-    if (msgBox.windowTitle()=="") { msgBox.setWindowTitle("Prozor"); };
+    if (msgBox.windowTitle()=="") { msgBox.setWindowTitle("Prozor"); }
     msgBox.setWindowIcon(ikonaMsgBox);
     fontMsgBox.setFamily("MS Shell Dig 2");
     fontMsgBox.setPixelSize(10);
@@ -110,25 +119,16 @@ void MainWindow::on_OKgumb_clicked()
     msgBox.setFont(fontMsgBox);
     msgBox.setButtonText(1,"OK");
 
-    tekst = "Unesli ste sljedeći tekst: \'";
-    krivi_unos = "Uneseni tekst ne smije biti dulji od 200 znakova.";
-    prazan_unos = "Niste unesli tekst.";
-
     rijec = ui->InputLine->text(); //unesena riječ
-    rijec.append("\'");
+    int duljinaRijeci = rijec.length();
+    rijec.insert(0,tekst);
+    rijec.append("'");
 
-    if ( (rijec.size() > 1) && (rijec.size() <= 200)) msgBox.setText(tekst.append(rijec));
-    else if(rijec.size() > 200) msgBox.setText(krivi_unos);
+    if ( (duljinaRijeci > 0) && (duljinaRijeci <= 200)) msgBox.setText(rijec);
+    else if(duljinaRijeci > 200) msgBox.setText(krivi_unos);
     else msgBox.setText(prazan_unos);
 
     msgBox.exec(); //prikazivanje MessageBox-a
-}
-
-//kada kliknemo gumb Obriši
-void MainWindow::on_ObrisiGumb_clicked()
-{
-    ui->InputLine->selectAll();
-    ui->InputLine->del();
 }
 
 
