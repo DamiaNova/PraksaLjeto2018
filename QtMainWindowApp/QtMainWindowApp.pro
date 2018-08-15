@@ -25,11 +25,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    jezik.cpp
+    jezik.cpp \
+    inputline.cpp
 
 HEADERS += \
         mainwindow.h \
-    jezik.h
+    jezik.h \
+    inputline.h
 
 FORMS += \
         mainwindow.ui

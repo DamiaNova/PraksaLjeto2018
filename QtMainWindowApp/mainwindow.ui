@@ -88,7 +88,7 @@
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>SizeVerCursor</cursorShape>
+     <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

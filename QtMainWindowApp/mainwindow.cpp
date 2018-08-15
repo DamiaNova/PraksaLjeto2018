@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include "jezik.h"
 #include "jezik.cpp"
+#include "inputline.h"
+#include "inputline.cpp"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), //konstruktor
@@ -13,26 +15,26 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->actionHrvatski->triggered(true);
 
     //parametri za InputLine (LineEdit widget)
-    ui->InputLine->setPlaceholderText("");
-    ilFont.setFamily("MS Shell Dig 2");
-    ilFont.setPixelSize(13);
-    ilFont.setKerning(true);
-    ilFont.setItalic(false);
-    ilFont.setBold(false);
-    ilFont.setStrikeOut(false);
-    ilFont.setUnderline(false);
+    inputline inputPar;
+    inputPar.ucitavanjeInputPar();
+    ui->InputLine->setPlaceholderText(inputPar.placeholderTxt);
+    ilFont.setFamily(inputPar.fontFam);
+    ilFont.setPixelSize(inputPar.fontSiz);
+    ilFont.setKerning(inputPar.fontKer);
+    ilFont.setItalic(inputPar.fontIta);
+    ilFont.setBold(inputPar.fontBol);
+    ilFont.setStrikeOut(inputPar.fontStrik);
+    ilFont.setUnderline(inputPar.fontUnderl);
     ui->InputLine->setFont(ilFont);
-    ilKursor.setShape(Qt::SizeVerCursor);
-    ui->InputLine->setCursor(ilKursor);
-    int x = 60;
-    int y = 300;
-    int width=351;
-    int height=31;
+    int x = inputPar.xPoz;
+    int y = inputPar.yPoz;
+    int width=inputPar.sirina;
+    int height=inputPar.visina;
     ui->InputLine->setGeometry(x,y,width,height);
-    ui->InputLine->setMaximumHeight(100);
-    ui->InputLine->setMaximumWidth(500);
-    ui->InputLine->setMinimumHeight(20);
-    ui->InputLine->setMinimumWidth(100);
+    ui->InputLine->setMaximumHeight(inputPar.maxVis);
+    ui->InputLine->setMaximumWidth(inputPar.maxSir);
+    ui->InputLine->setMinimumHeight(inputPar.minVis);
+    ui->InputLine->setMinimumWidth(inputPar.minSir);
 
     //stvaranje liste koja sadrži oba QPushButton-a
     QPushButton *gumb;
