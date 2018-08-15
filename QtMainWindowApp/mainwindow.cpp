@@ -80,18 +80,18 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //parametri za tekst
     ui->menuJezik->setTitle(hrvatski.menuJez);
-    ui->actionHrvatski->setText("Hrvatski");
-    ui->actionEngleski->setText("Engleski");
-    ui->actionJapanski->setText("Japanski");
-    ui->menuInfo->setTitle("Info");
-    ui->actionInfo->setText("O aplikaciji");
-    ui->menuParametri->setTitle("Parametri");
-    ui->actionCustom->setText("Prilagođeni...");
-    ui->actionDefault->setText("Zadani");
-    ui->Naslov->setText("Dobrodošli u QT aplikaciju!");
-    ui->OpisApp->setText("Molimo unesite neki tekst (do 200 znakova) i pritisnite \"OK\" gumb za nastavak. Za brisanje unesenog teksta pritisnite \"Obriši\".");
-    ui->OKgumb->setText("OK");
-    ui->ObrisiGumb->setText("Obriši");
+    ui->actionHrvatski->setText(hrvatski.actionHrv);
+    ui->actionEngleski->setText(hrvatski.actionEng);
+    ui->actionJapanski->setText(hrvatski.actionJap);
+    ui->menuInfo->setTitle(hrvatski.menuInf);
+    ui->actionInfo->setText(hrvatski.actionInf);
+    ui->menuParametri->setTitle(hrvatski.menuPara);
+    ui->actionCustom->setText(hrvatski.actionCust);
+    ui->actionDefault->setText(hrvatski.actionDef);
+    ui->Naslov->setText(hrvatski.nasl);
+    ui->OpisApp->setText(hrvatski.opis);
+    ui->OKgumb->setText(hrvatski.OKgmb);
+    ui->ObrisiGumb->setText(hrvatski.obrGmb);
 
     //parametri za QMenuBar
     fontMenu.setFamily("MS Shell Dig 2");
