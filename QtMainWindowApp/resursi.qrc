@@ -6,5 +6,7 @@
         <file>parametri/engleski.txt</file>
         <file>parametri/španjolski.txt</file>
         <file>parametri/QLineEdit.txt</file>
+        <file>parametri/gumbi.txt</file>
+        <file>parametri/ostaliParametri.txt</file>
     </qresource>
 </RCC>

@@ -5,6 +5,8 @@
 #include "jezik.cpp"
 #include "inputline.h"
 #include "inputline.cpp"
+#include "gumbi.h"
+#include "ostaliparametri.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), //konstruktor
@@ -40,27 +42,32 @@ MainWindow::MainWindow(QWidget *parent) :
     QPushButton *gumb;
     QPushButton *OK =ui->OKgumb;
     QPushButton *Obrisi = ui->ObrisiGumb;
-    QList <QPushButton *> gumbi = { OK, Obrisi };
-    //parametri za oba QPushButton-a
+    QList <QPushButton *> gumbici = { OK, Obrisi };
+    gumbi gmb;
+    gmb.ucitavanjeGumbPar();
+
     for (int i=0;i<2;i++){
         //parametri za gumbe
-        gumb=gumbi[i];
-        gumb->setDisabled(false);
-        gumb->setAutoFillBackground(true);
+        gumb=gumbici[i];
+        gumb->setDisabled(gmb.disbld);
+        gumb->setAutoFillBackground(gmb.autoFillBg);
         QPalette pal = gumb->palette();
-        pal.setColor(QPalette::Button, QColor(Qt::blue));
-        gumb->setAutoFillBackground(true);
+        pal.setColor(QPalette::Button, QColor(gmb.R,gmb.G,gmb.B));
         gumb->setPalette(pal);
-        gumb->setFixedHeight(61);
-        gumb->setFixedWidth(121);
-        fontGumb.setFamily("MS Shell Dig 2");
-        fontGumb.setPixelSize(8);
-        fontGumb.setKerning(true);
-        fontGumb.setItalic(false);
-        fontGumb.setBold(false);
-        fontGumb.setStrikeOut(false);
-        fontGumb.setUnderline(false);
-        fontGumb.setPointSize(9);
+        gumb->setFixedHeight(gmb.visina);
+        gumb->setFixedWidth(gmb.sirina);
+        gumb->setMaximumHeight(gmb.maxSir);
+        gumb->setMaximumWidth(gmb.maxVis);
+        gumb->setMinimumHeight(gmb.minVis);
+        gumb->setMinimumWidth(gmb.minSir);
+        fontGumb.setFamily(gmb.fontFam);
+        fontGumb.setPixelSize(gmb.fontSiz);
+        fontGumb.setKerning(gmb.fontKer);
+        fontGumb.setItalic(gmb.fontIta);
+        fontGumb.setBold(gmb.fontBol);
+        fontGumb.setStrikeOut(gmb.fontStrik);
+        fontGumb.setUnderline(gmb.fontUnderl);
+        fontGumb.setPointSize(gmb.pointSiz);
         gumb->setFont(fontGumb);
     }
 
@@ -69,26 +76,29 @@ MainWindow::MainWindow(QWidget *parent) :
     QLabel *naslov =ui->Naslov;
     QLabel *opis = ui->OpisApp;
     QList <QLabel *> etikete  = { naslov, opis };
+
+    ostaliparametri ostPar;
+    ostPar.ucitavanjeOstalihPar();
+
     for (int i=0;i<2;i++){
         //parametri za etikete
         etiketa=etikete[i];
-        etiketa->setStyleSheet("QLabel { color : black; }");
+        etiketa->setStyleSheet(ostPar.stylSheetLabel);
     }
 
     //parametri za QGroupBox
-    ui->groupBox->setStyleSheet("background-color: lightgrey ;");
+    ui->groupBox->setStyleSheet(ostPar.stylSheetGrpBox);
 
     //parametri za QMenuBar
-    fontMenu.setFamily("MS Shell Dig 2");
-    fontMenu.setPixelSize(10);
-    fontMenu.setKerning(true);
-    fontMenu.setItalic(false);
-    fontMenu.setBold(false);
-    fontMenu.setStrikeOut(false);
-    fontMenu.setUnderline(false);
-    fontMenu.setPointSize(9);
+    fontMenu.setFamily(ostPar.fontFam);
+    fontMenu.setPixelSize(ostPar.fontSiz);
+    fontMenu.setKerning(ostPar.fontKer);
+    fontMenu.setItalic(ostPar.fontIta);
+    fontMenu.setBold(ostPar.fontBol);
+    fontMenu.setStrikeOut(ostPar.fontStrik);
+    fontMenu.setUnderline(ostPar.fontUnderl);
+    fontMenu.setPointSize(ostPar.pointSiz);
     ui->menuBar->setFont(fontMenu);
-
 }
 
 MainWindow::~MainWindow() //destrukor

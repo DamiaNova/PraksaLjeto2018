@@ -1,0 +1,15 @@
+﻿//Parametri za QLabel:
+Style sheetQLabel: "QLabel { color : black; }"
+
+//Parametri za QGroupBox:
+Style sheetQGroupBox: "background-color: lightgrey ;"
+
+//Parametri za QMenuBar:
+fontFamily: "MS Shell Dig 2"
+fontSize: "10"
+fontKerning: "true"
+fontItalic: "false"
+fontBold: "true"
+fontStrikeout: "false"
+fontUnderline: "false"
+pointSize: "9"

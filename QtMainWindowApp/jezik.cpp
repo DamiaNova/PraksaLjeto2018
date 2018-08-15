@@ -34,6 +34,7 @@ void jezik::ucitavanjeParametara(QString putanja){
                 else if (linija.contains("OKgumb:",Qt::CaseSensitive)){ OKgmb = par;}
                 else if (linija.contains("obrisiGumb:",Qt::CaseSensitive)){ obrGmb = par;}
                 else if (linija.contains("messageBoxNaslov:",Qt::CaseSensitive)){ msgBoxNaslov = par;}
+                else if (linija.contains("mainWindowNaslov:",Qt::CaseSensitive)){ MainWinNaslov = par;}
                 else if (linija.contains("messageBoxTekst:",Qt::CaseSensitive)){ msgBxTekst = par;}
                 else if (linija.contains("messageBoxKriviUnos:",Qt::CaseSensitive)){ msgBxKrivo = par;}
                 else if (linija.contains("messageBoxPrazanUnos:",Qt::CaseSensitive)){ msgBxPrazno = par;}
