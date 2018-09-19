@@ -35,8 +35,15 @@ MainWindow::MainWindow(QWidget *parent) :
     on_click_timer_spa = new QTimer(this);
     connect(on_click_timer_spa,&QTimer::timeout,this,&MainWindow::on_click_funkcija_spanjolski);
 
+    //TIMER MESSAGE BOX OK
+    on_click_timer_msgBox_OK = new QTimer(this);
+    connect(on_click_timer_msgBox_OK,&QTimer::timeout,this,&MainWindow::on_click_funkcija_msgBox_OK);
+
+    //TIMER MESSAGE BOX INFO
+    on_click_timer_msgBox_Info = new QTimer(this);
+    connect(on_click_timer_msgBox_Info,&QTimer::timeout,this,&MainWindow::on_click_funkcija_msgBox_Info);
+
      ui->actionHrvatski->triggered(true); //defaultno odabrani jezik je hrvatski
-     mBox.ucitavanjeMsgBoxPar();
 
     //parametri za InputLine (LineEdit widget)
     //INICIJALNI PARAMETRI ZA INPUT LINE
@@ -177,11 +184,9 @@ void MainWindow::on_ObrisiGumb_clicked()
     ui->InputLine->del();
 }
 
-
-//kada kliknemo gumb OK
-void MainWindow::on_OKgumb_clicked()
-{
-    //parametri za QMessageBox
+void MainWindow::on_click_funkcija_msgBox_OK(){
+    //parametri za OK gumb
+    mBox.ucitavanjeMsgBoxPar();
     QPixmap ikonaMsgBox (":/resursi/icons/cat.ico");
     if (msgBox.windowTitle()=="") { msgBox.setWindowTitle("Prozor"); }
     msgBox.setWindowIcon(ikonaMsgBox);
@@ -195,6 +200,32 @@ void MainWindow::on_OKgumb_clicked()
     fontMsgBox.setPointSize(mBox.pointSiz);
     msgBox.setFont(fontMsgBox);
     msgBox.setButtonText(1,mBox.btnTxt);
+
+}
+
+void MainWindow::on_click_funkcija_msgBox_Info(){
+    //parametri za Info prozor
+    mBox.ucitavanjeMsgBoxPar();
+    QPixmap ikonaProzor (":/resursi/icons/turtle.ico");
+    prozor.setWindowIcon(ikonaProzor);
+    fontProzor.setFamily(mBox.fontFam);
+    fontProzor.setPixelSize(mBox.fontSiz);
+    fontProzor.setKerning(mBox.fontKer);
+    fontProzor.setItalic(mBox.fontIta);
+    fontProzor.setBold(mBox.fontBol);
+    fontProzor.setStrikeOut(mBox.fontStrik);
+    fontProzor.setUnderline(mBox.fontUnderl);
+    fontProzor.setPointSize(mBox.pointSiz);
+    prozor.setFont(fontProzor);
+    prozor.setButtonText(1,mBox.btnTxt);
+    prozor.setIconPixmap(QPixmap(mBox.putanjaIcon));
+}
+
+//kada kliknemo gumb OK
+void MainWindow::on_OKgumb_clicked()
+{
+    //pokreće timer koji pokreće učitavanje i postavljanje parametara
+    on_click_timer_msgBox_OK->start(100);
 
     rijec = ui->InputLine->text(); //unesena riječ
     int duljinaRijeci = rijec.length();
@@ -320,19 +351,7 @@ void MainWindow::on_click_funkcija_spanjolski(){
 
 void MainWindow::on_actionInfo_triggered()
 {
-    QPixmap ikonaProzor (":/resursi/icons/turtle.ico");
-    prozor.setWindowIcon(ikonaProzor);
-    fontProzor.setFamily(mBox.fontFam);
-    fontProzor.setPixelSize(mBox.fontSiz);
-    fontProzor.setKerning(mBox.fontKer);
-    fontProzor.setItalic(mBox.fontIta);
-    fontProzor.setBold(mBox.fontBol);
-    fontProzor.setStrikeOut(mBox.fontStrik);
-    fontProzor.setUnderline(mBox.fontUnderl);
-    fontProzor.setPointSize(mBox.pointSiz);
-    prozor.setFont(fontProzor);
-    prozor.setButtonText(1,mBox.btnTxt);
-    prozor.setIconPixmap(QPixmap(mBox.putanjaIcon));
+    on_click_timer_msgBox_Info->start();
     prozor.exec();
 }
 

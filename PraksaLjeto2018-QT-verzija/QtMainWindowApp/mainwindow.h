@@ -67,6 +67,8 @@ public slots:
     void on_click_funkcija_engleski();
     void on_click_funkcija_hrvatski();
     void on_click_funkcija_spanjolski();
+    void on_click_funkcija_msgBox_OK();
+    void on_click_funkcija_msgBox_Info();
 
 private slots:
     void on_OKgumb_clicked();
@@ -83,6 +85,8 @@ private:
     QTimer *on_click_timer_eng;
     QTimer *on_click_timer_hrv;
     QTimer *on_click_timer_spa;
+    QTimer *on_click_timer_msgBox_OK;
+    QTimer *on_click_timer_msgBox_Info;
 };
 
 #endif // MAINWINDOW_H
