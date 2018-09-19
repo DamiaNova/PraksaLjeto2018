@@ -10,6 +10,7 @@
 #include "messagebox.h"
 #include "izborikona.h"
 #include <QPixmap>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), //konstruktor
@@ -18,8 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this); //objekt se zove "setupUi" koji otvara naš prozor
 
     timer = new QTimer(this); //inicijalizacija timer
-    connect(timer, SIGNAL(timeout()),this,SLOT(funkcija()));
-    timer->start(10000); //vrijeme u milisekundama
+    connect(timer, &QTimer::timeout,this,&MainWindow::funkcija);
+    timer->start(500); //vrijeme u milisekundama
 
      ui->actionHrvatski->triggered(true);
      mBox.ucitavanjeMsgBoxPar();
@@ -52,32 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     gumbici = { OK, Obrisi };
 
     //POČETNI PARAMETRI ZA GUMBE
-    g.ucitavanjeGumbPar();
 
-    for (int i=0;i<2;i++){
-        //parametri za gumbe
-        gumb=gumbici[i];
-        gumb->setDisabled(g.disbld);
-        gumb->setAutoFillBackground(g.autoFillBg);
-        QPalette pal = gumb->palette();
-        pal.setColor(QPalette::Button, QColor(g.R,g.G,g.B));
-        gumb->setPalette(pal);
-        gumb->setFixedHeight(g.visina);
-        gumb->setFixedWidth(g.sirina);
-        gumb->setMaximumHeight(g.maxSir);
-        gumb->setMaximumWidth(g.maxVis);
-        gumb->setMinimumHeight(g.minVis);
-        gumb->setMinimumWidth(g.minSir);
-        fontGumb.setFamily(g.fontFam);
-        fontGumb.setPixelSize(g.fontSiz);
-        fontGumb.setKerning(g.fontKer);
-        fontGumb.setItalic(g.fontIta);
-        fontGumb.setBold(g.fontBol);
-        fontGumb.setStrikeOut(g.fontStrik);
-        fontGumb.setUnderline(g.fontUnderl);
-        fontGumb.setPointSize(g.pointSiz);
-        gumb->setFont(fontGumb);
-    }
 
     //stvaranje liste koja sadrži oba QLabel-a
     QLabel *etiketa;
@@ -114,11 +90,11 @@ MainWindow::~MainWindow() //destrukor
     delete ui;
 }
 
+
 //Postavljanje parametara
 void MainWindow::funkcija()
 {
     g.ucitavanjeGumbPar();
-
     for (int i=0;i<2;i++){
         //parametri za gumbe
         gumb=gumbici[i];
@@ -134,13 +110,13 @@ void MainWindow::funkcija()
         gumb->setMinimumHeight(g.minVis);
         gumb->setMinimumWidth(g.minSir);
         fontGumb.setFamily(g.fontFam);
-        fontGumb.setPixelSize(g.fontSiz);
+        fontGumb.setPixelSize(g.fontPixSiz);
         fontGumb.setKerning(g.fontKer);
         fontGumb.setItalic(g.fontIta);
         fontGumb.setBold(g.fontBol);
         fontGumb.setStrikeOut(g.fontStrik);
         fontGumb.setUnderline(g.fontUnderl);
-        fontGumb.setPointSize(g.pointSiz);
+        fontGumb.setPointSize(g.fontSiz);
         gumb->setFont(fontGumb);
     }
 }

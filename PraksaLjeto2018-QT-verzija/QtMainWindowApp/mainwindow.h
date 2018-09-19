@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QFont>
 #include "gumbi.h"
+#include <QFile>
+#include <QFileSystemWatcher>
 
 namespace Ui {
     class MainWindow; //govori mainwindow.ui file-u da uključi MainWindow u sebe
@@ -37,9 +39,11 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     QPushButton *Obrisi;
     QList <QPushButton *> gumbici;
 
+
 public:
     explicit MainWindow(QWidget *parent = nullptr); //konstruktor
     ~MainWindow(); //destruktor
+
 
 public slots:
     void funkcija();

@@ -1,6 +1,7 @@
 #ifndef GUMBI_H
 #define GUMBI_H
 #include <QString>
+#include <QFile>
 
 
 class gumbi
@@ -22,13 +23,13 @@ public:
         int minVis;
         int minSir;
         QString fontFam;
-        int fontSiz;
+        int fontPixSiz;
         bool fontKer;
         bool fontIta;
         bool fontBol;
         bool fontStrik;
         bool fontUnderl;
-        int pointSiz;
+        int fontSiz;
 };
 
 #endif // GUMBI_H
