@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
      mBox.ucitavanjeMsgBoxPar();
 
     //parametri za InputLine (LineEdit widget)
-    inputline inputPar;
+    //INICIJALNI PARAMETRI ZA INPUT LINE
     inputPar.ucitavanjeInputPar();
     ui->InputLine->setPlaceholderText(inputPar.placeholderTxt);
     ilFont.setFamily(inputPar.fontFam);
@@ -48,31 +48,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->InputLine->setMinimumWidth(inputPar.minSir);
 
     //stvaranje liste koja sadrži oba QPushButton-a
+    //ZA GUMBE:
     OK =ui->OKgumb;
     Obrisi = ui->ObrisiGumb;
     gumbici = { OK, Obrisi };
 
-    //POČETNI PARAMETRI ZA GUMBE
+    //ZA OSTALE PARAMETRE:
+    naslov =ui->Naslov;
+    opis = ui->OpisApp;
+    etikete  = { naslov, opis };
 
-
-    //stvaranje liste koja sadrži oba QLabel-a
-    QLabel *etiketa;
-    QLabel *naslov =ui->Naslov;
-    QLabel *opis = ui->OpisApp;
-    QList <QLabel *> etikete  = { naslov, opis };
-
-    ostaliparametri ostPar;
+    //INICIJALNI PARAMETRI
     ostPar.ucitavanjeOstalihPar();
-
     for (int i=0;i<2;i++){
         //parametri za etikete
         etiketa=etikete[i];
         etiketa->setStyleSheet(ostPar.stylSheetLabel);
     }
-
     //parametri za QGroupBox
     ui->groupBox->setStyleSheet(ostPar.stylSheetGrpBox);
-
     //parametri za QMenuBar
     fontMenu.setFamily(ostPar.fontFam);
     fontMenu.setPixelSize(ostPar.fontSiz);
@@ -91,9 +85,10 @@ MainWindow::~MainWindow() //destrukor
 }
 
 
-//Postavljanje parametara
+//Postavljanje parametara svakih 0.5 sekundi
 void MainWindow::funkcija()
 {
+    //GUMBI:
     g.ucitavanjeGumbPar();
     for (int i=0;i<2;i++){
         //parametri za gumbe
@@ -119,7 +114,56 @@ void MainWindow::funkcija()
         fontGumb.setPointSize(g.fontSiz);
         gumb->setFont(fontGumb);
     }
+    //ENGLESKI:
+        //on_actionEngleski_triggered();
+    //HRVATSKI:
+        //on_actionHrvatski_triggered();
+    //ŠPANJOLSKI:
+        //on_actionSpanjolski_triggered();
+    //MESSAGE BOX:
+
+
+    //OSTALI PARAMETRI (LABEL, GROUP, MENU BAR):
+    ostPar.ucitavanjeOstalihPar();
+    for (int i=0;i<2;i++){
+        //parametri za etikete
+        etiketa=etikete[i];
+        etiketa->setStyleSheet(ostPar.stylSheetLabel);
+    }
+    //parametri za QGroupBox
+    ui->groupBox->setStyleSheet(ostPar.stylSheetGrpBox);
+    //parametri za QMenuBar
+    fontMenu.setFamily(ostPar.fontFam);
+    fontMenu.setPixelSize(ostPar.fontSiz);
+    fontMenu.setKerning(ostPar.fontKer);
+    fontMenu.setItalic(ostPar.fontIta);
+    fontMenu.setBold(ostPar.fontBol);
+    fontMenu.setStrikeOut(ostPar.fontStrik);
+    fontMenu.setUnderline(ostPar.fontUnderl);
+    fontMenu.setPointSize(ostPar.pointSiz);
+    ui->menuBar->setFont(fontMenu);
+    //ZA INPUT LINE (Q LINE EDIT):
+    inputPar.ucitavanjeInputPar();
+    ui->InputLine->setPlaceholderText(inputPar.placeholderTxt);
+    ilFont.setFamily(inputPar.fontFam);
+    ilFont.setPixelSize(inputPar.fontSiz);
+    ilFont.setKerning(inputPar.fontKer);
+    ilFont.setItalic(inputPar.fontIta);
+    ilFont.setBold(inputPar.fontBol);
+    ilFont.setStrikeOut(inputPar.fontStrik);
+    ilFont.setUnderline(inputPar.fontUnderl);
+    ui->InputLine->setFont(ilFont);
+    int x = inputPar.xPoz;
+    int y = inputPar.yPoz;
+    int width=inputPar.sirina;
+    int height=inputPar.visina;
+    ui->InputLine->setGeometry(x,y,width,height);
+    ui->InputLine->setMaximumHeight(inputPar.maxVis);
+    ui->InputLine->setMaximumWidth(inputPar.maxSir);
+    ui->InputLine->setMinimumHeight(inputPar.minVis);
+    ui->InputLine->setMinimumWidth(inputPar.minSir);
 }
+
 
 //kada kliknemo gumb Obriši
 void MainWindow::on_ObrisiGumb_clicked()
@@ -162,7 +206,7 @@ void MainWindow::on_OKgumb_clicked()
 
 void MainWindow::on_actionEngleski_triggered()
 {
-    QString putanja = ":/resursi/parametri/engleski.txt";
+    QString putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/engleski.txt";
     jezik engleski;
     engleski.ucitavanjeParametara(putanja);
     //parametri za tekst
@@ -190,7 +234,7 @@ void MainWindow::on_actionEngleski_triggered()
 
 void MainWindow::on_actionHrvatski_triggered()
 {
-    QString putanja = ":/resursi/parametri/hrvatski.txt";
+    QString putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/hrvatski.txt";
     jezik hrvatski;
     hrvatski.ucitavanjeParametara(putanja);
 
@@ -219,7 +263,7 @@ void MainWindow::on_actionHrvatski_triggered()
 
 void MainWindow::on_actionSpanjolski_triggered()
 {
-    QString putanja = ":/resursi/parametri/španjolski.txt";
+    QString putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/španjolski.txt";
     jezik spanjolski;
     spanjolski.ucitavanjeParametara(putanja);
 

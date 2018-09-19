@@ -51,8 +51,5 @@ void gumbi::ucitavanjeGumbPar(){
                 else if (linija.contains("fontUnderline:",Qt::CaseSensitive)){ fontUnderl = pretvorbaBool(par); }
                 else if (linija.contains("fontSize:",Qt::CaseSensitive)){ fontSiz = pretvorbaInt(par); }
         }
-    if (fontSiz==20){
-        qDebug("Font je 20");
-    }
     gumbiFile2.close();
 }

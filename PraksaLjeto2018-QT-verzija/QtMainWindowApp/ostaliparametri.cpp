@@ -19,9 +19,7 @@ bool ostaliparametri::pretvorbaBool(QString tekst){
 }
 
 void ostaliparametri::ucitavanjeOstalihPar(){
-
-    QString putanjaOstaliPar=":/resursi/parametri/ostaliParametri.txt";
-    QFile ostaliPar(putanjaOstaliPar);
+    QFile ostaliPar("C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/ostaliParametri.txt");
     if(!ostaliPar.open(QFile::ReadOnly | QFile::Text )){ return; }
     while (!ostaliPar.atEnd()) {
             QString linija = ostaliPar.readLine();
@@ -41,4 +39,5 @@ void ostaliparametri::ucitavanjeOstalihPar(){
                 else if (linija.contains("fontUnderline:",Qt::CaseSensitive)){ fontUnderl = pretvorbaBool(par);}
                 else if (linija.contains("pointSize:",Qt::CaseSensitive)){ pointSiz = pretvorbaInt(par); }
         }
+    ostaliPar.close();
 }

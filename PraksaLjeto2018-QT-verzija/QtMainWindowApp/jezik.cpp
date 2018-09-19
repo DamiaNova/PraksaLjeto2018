@@ -40,4 +40,5 @@ void jezik::ucitavanjeParametara(QString putanja){
                 else if (linija.contains("messageBoxPrazanUnos:",Qt::CaseSensitive)){ msgBxPrazno = par;}
                 else if (linija.contains("messageBoxProzorTekst:",Qt::CaseSensitive)){ prozorTekst = par;}
         }
+    parametri.close();
 }

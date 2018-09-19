@@ -10,6 +10,8 @@
 #include "gumbi.h"
 #include <QFile>
 #include <QFileSystemWatcher>
+#include "ostaliparametri.h"
+#include "inputline.h"
 
 namespace Ui {
     class MainWindow; //govori mainwindow.ui file-u da uključi MainWindow u sebe
@@ -38,6 +40,14 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     QPushButton *OK;
     QPushButton *Obrisi;
     QList <QPushButton *> gumbici;
+    //za ostale parametre
+    ostaliparametri ostPar;
+    QLabel *etiketa;
+    QLabel *naslov;
+    QLabel *opis;
+    QList <QLabel *> etikete;
+    //za QLineEdit
+    inputline inputPar;
 
 
 public:

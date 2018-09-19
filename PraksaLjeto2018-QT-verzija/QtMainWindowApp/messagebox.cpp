@@ -19,9 +19,7 @@ bool messagebox2::pretvorbaBool(QString tekst){
 }
 
 void messagebox2::ucitavanjeMsgBoxPar(){
-
-    QString putanjaMsgBox=":/resursi/parametri/messageBox.txt";
-    QFile msgBxPar(putanjaMsgBox);
+    QFile msgBxPar("C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/messageBox.txt");
     if(!msgBxPar.open(QFile::ReadOnly | QFile::Text )){ return; }
     while (!msgBxPar.atEnd()) {
             QString linija = msgBxPar.readLine();
@@ -41,4 +39,5 @@ void messagebox2::ucitavanjeMsgBoxPar(){
                 else if (linija.contains("buttonText:",Qt::CaseSensitive)){ btnTxt = par; }
                 else if (linija.contains("putanjaIkone:",Qt::CaseSensitive)){ putanjaIcon = par; }
         }
+    msgBxPar.close();
 }

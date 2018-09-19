@@ -19,9 +19,7 @@ bool inputline::pretvorbaBool(QString tekst){
 }
 
 void inputline::ucitavanjeInputPar(){
-
-    QString putanjaInputLine=":/resursi/parametri/QLineEdit.txt";
-    QFile inputLinePar(putanjaInputLine);
+    QFile inputLinePar("C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/QLineEdit.txt");
     if(!inputLinePar.open(QFile::ReadOnly | QFile::Text )){ return; }
     while (!inputLinePar.atEnd()) {
             QString linija = inputLinePar.readLine();
@@ -47,4 +45,5 @@ void inputline::ucitavanjeInputPar(){
                 else if (linija.contains("minVisina:",Qt::CaseSensitive)){ minVis = pretvorbaInt(par); }
                 else if (linija.contains("minŠirina:",Qt::CaseSensitive)){ minSir = pretvorbaInt(par); }
         }
+    inputLinePar.close();
 }
