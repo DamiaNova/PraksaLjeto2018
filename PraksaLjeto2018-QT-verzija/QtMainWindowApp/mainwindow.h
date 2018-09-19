@@ -12,6 +12,7 @@
 #include <QFileSystemWatcher>
 #include "ostaliparametri.h"
 #include "inputline.h"
+#include "jezik.h"
 
 namespace Ui {
     class MainWindow; //govori mainwindow.ui file-u da uključi MainWindow u sebe
@@ -35,6 +36,7 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     QFont ilFont;
     QCursor ilKursor;
     //zbog timer-a
+    void postParGumb();
     gumbi g;
     QPushButton *gumb;
     QPushButton *OK;
@@ -48,6 +50,11 @@ class MainWindow : public QMainWindow //nasljeđuje od QMainWindow klase
     QList <QLabel *> etikete;
     //za QLineEdit
     inputline inputPar;
+    //jezici
+    jezik engleski;
+    jezik hrvatski;
+    jezik spanjolski;
+    QString putanja;
 
 
 public:
@@ -57,6 +64,9 @@ public:
 
 public slots:
     void funkcija();
+    void on_click_funkcija_engleski();
+    void on_click_funkcija_hrvatski();
+    void on_click_funkcija_spanjolski();
 
 private slots:
     void on_OKgumb_clicked();
@@ -70,6 +80,9 @@ private slots:
 private:
     Ui::MainWindow *ui; //objekt MainWindow-a imena "ui", preko njega se pristupa svim widgetima
     QTimer *timer;
+    QTimer *on_click_timer_eng;
+    QTimer *on_click_timer_hrv;
+    QTimer *on_click_timer_spa;
 };
 
 #endif // MAINWINDOW_H

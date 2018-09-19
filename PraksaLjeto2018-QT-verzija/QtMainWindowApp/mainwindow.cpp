@@ -18,11 +18,24 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this); //objekt se zove "setupUi" koji otvara naš prozor
 
+    //TIMER
     timer = new QTimer(this); //inicijalizacija timer
     connect(timer, &QTimer::timeout,this,&MainWindow::funkcija);
     timer->start(500); //vrijeme u milisekundama
 
-     ui->actionHrvatski->triggered(true);
+    //TIMER ENGLESKI
+    on_click_timer_eng = new QTimer(this);
+    connect(on_click_timer_eng,&QTimer::timeout,this,&MainWindow::on_click_funkcija_engleski);
+
+    //TIMER HRVATSKI
+    on_click_timer_hrv = new QTimer(this);
+    connect(on_click_timer_hrv,&QTimer::timeout,this,&MainWindow::on_click_funkcija_hrvatski);
+
+    //TIMER ŠPANJOLSKI
+    on_click_timer_spa = new QTimer(this);
+    connect(on_click_timer_spa,&QTimer::timeout,this,&MainWindow::on_click_funkcija_spanjolski);
+
+     ui->actionHrvatski->triggered(true); //defaultno odabrani jezik je hrvatski
      mBox.ucitavanjeMsgBoxPar();
 
     //parametri za InputLine (LineEdit widget)
@@ -114,14 +127,6 @@ void MainWindow::funkcija()
         fontGumb.setPointSize(g.fontSiz);
         gumb->setFont(fontGumb);
     }
-    //ENGLESKI:
-        //on_actionEngleski_triggered();
-    //HRVATSKI:
-        //on_actionHrvatski_triggered();
-    //ŠPANJOLSKI:
-        //on_actionSpanjolski_triggered();
-    //MESSAGE BOX:
-
 
     //OSTALI PARAMETRI (LABEL, GROUP, MENU BAR):
     ostPar.ucitavanjeOstalihPar();
@@ -204,10 +209,18 @@ void MainWindow::on_OKgumb_clicked()
 }
 
 
+//ENGLESKI
 void MainWindow::on_actionEngleski_triggered()
 {
-    QString putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/engleski.txt";
-    jezik engleski;
+    for (int i=0;i<2;i++){
+        if(on_click_timer_spa->isActive()) on_click_timer_spa->stop();
+        else if(on_click_timer_hrv->isActive()) on_click_timer_hrv->stop();
+        else if (!on_click_timer_eng->isActive()) on_click_timer_eng->start(100);
+        else return;
+    }
+}
+void MainWindow::on_click_funkcija_engleski(){
+    putanja =  "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/engleski.txt";
     engleski.ucitavanjeParametara(putanja);
     //parametri za tekst
     ui->menuJezik->setTitle(engleski.menuJez);
@@ -232,12 +245,19 @@ void MainWindow::on_actionEngleski_triggered()
     prazan_unos = engleski.msgBxPrazno;
 }
 
+//HRVATSKI
 void MainWindow::on_actionHrvatski_triggered()
-{
-    QString putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/hrvatski.txt";
-    jezik hrvatski;
+{      
+    for (int i=0;i<2;i++){
+        if(on_click_timer_spa->isActive()) on_click_timer_spa->stop();
+        else if(on_click_timer_eng->isActive()) on_click_timer_eng->stop();
+        else if (!on_click_timer_hrv->isActive()) on_click_timer_hrv->start(100);
+        else return;
+    }
+}
+void MainWindow::on_click_funkcija_hrvatski(){
+    putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/hrvatski.txt";
     hrvatski.ucitavanjeParametara(putanja);
-
     //parametri za tekst
     ui->menuJezik->setTitle(hrvatski.menuJez);
     ui->actionHrvatski->setText(hrvatski.actionHrv);
@@ -261,12 +281,19 @@ void MainWindow::on_actionHrvatski_triggered()
     prazan_unos = hrvatski.msgBxPrazno;
 }
 
+//ŠPANJOLSKI
 void MainWindow::on_actionSpanjolski_triggered()
 {
-    QString putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/španjolski.txt";
-    jezik spanjolski;
+    for (int i=0;i<2;i++){
+        if(on_click_timer_hrv->isActive()) on_click_timer_hrv->stop();
+        else if(on_click_timer_eng->isActive()) on_click_timer_eng->stop();
+        else if (!on_click_timer_spa->isActive()) on_click_timer_spa->start(100);
+        else return;
+    }
+}
+void MainWindow::on_click_funkcija_spanjolski(){
+    putanja = "C:/Users/Mia/Desktop/PraksaLjeto2018-QT-verzija/QtMainWindowApp/parametri/španjolski.txt";
     spanjolski.ucitavanjeParametara(putanja);
-
     //parametri za tekst
     ui->menuJezik->setTitle(spanjolski.menuJez);
     ui->actionHrvatski->setText(spanjolski.actionHrv);

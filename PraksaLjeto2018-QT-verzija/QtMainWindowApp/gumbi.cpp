@@ -36,7 +36,7 @@ void gumbi::ucitavanjeGumbPar(){
                 else if (linija.contains("R:",Qt::CaseSensitive)){ R = pretvorbaInt(par); }
                 else if (linija.contains("G:",Qt::CaseSensitive)){ G = pretvorbaInt(par);}
                 else if (linija.contains("B:",Qt::CaseSensitive)){ B = pretvorbaInt(par);}
-                else if (linija.contains("height:",Qt::CaseSensitive)){ visina = pretvorbaInt(par);qDebug("USPJEH1");}
+                else if (linija.contains("height:",Qt::CaseSensitive)){ visina = pretvorbaInt(par);}
                 else if (linija.contains("width:",Qt::CaseSensitive)){ sirina = pretvorbaInt(par);}
                 else if (linija.contains("maxVisina:",Qt::CaseSensitive)){ maxVis = pretvorbaInt(par);}
                 else if (linija.contains("maxŠirina:",Qt::CaseSensitive)){ maxSir = pretvorbaInt(par); }
