@@ -26,10 +26,10 @@ void gumbi::ucitavanjeGumbPar(){
     if(!gumbiFile2.open(QFile::ReadOnly | QFile::Text )){ return; }
     while (!gumbiFile2.atEnd()) {
             QString linija = gumbiFile2.readLine();
-            int prviNavodnici = linija.indexOf("%", 0);
-            int drugiNavodnici = linija.indexOf("%", prviNavodnici+1);
+            int prviNavodnici = linija.indexOf("\"", 0);
+            int drugiNavodnici = linija.indexOf("\"", prviNavodnici+1);
             QString s = QString::number(drugiNavodnici);
-            int duljinaPar = drugiNavodnici-prviNavodnici-1;
+            int duljinaPar = drugiNavodnici-prviNavodnici-2;
             QString par = linija.mid(prviNavodnici+1,duljinaPar);
                 if (linija.contains("disabled:",Qt::CaseSensitive)){ disbld = pretvorbaBool(par);}
                 else if (linija.contains("autoFillBackground:",Qt::CaseSensitive)){ autoFillBg = pretvorbaBool(par);}

@@ -26,7 +26,7 @@ void messagebox2::ucitavanjeMsgBoxPar(){
             int prviNavodnici = linija.indexOf("\"", 0);
             int drugiNavodnici = linija.indexOf("\"", prviNavodnici+1);
             QString s = QString::number(drugiNavodnici);
-            int duljinaPar = drugiNavodnici-prviNavodnici-1;
+            int duljinaPar = drugiNavodnici-prviNavodnici-2;
             QString par = linija.mid(prviNavodnici+1,duljinaPar);
                 if (linija.contains("fontFamily:",Qt::CaseSensitive)){ fontFam = par;}
                 else if (linija.contains("fontPixelSize:",Qt::CaseSensitive)){ fontSiz = pretvorbaInt(par); }

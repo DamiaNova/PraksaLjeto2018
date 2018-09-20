@@ -198,9 +198,8 @@ void MainWindow::on_click_funkcija_msgBox_OK(){
     fontMsgBox.setStrikeOut(mBox.fontStrik);
     fontMsgBox.setUnderline(mBox.fontUnderl);
     fontMsgBox.setPointSize(mBox.pointSiz);
-    msgBox.setFont(fontMsgBox);
     msgBox.setButtonText(1,mBox.btnTxt);
-
+    msgBox.setFont(fontMsgBox);
 }
 
 void MainWindow::on_click_funkcija_msgBox_Info(){
@@ -224,6 +223,22 @@ void MainWindow::on_click_funkcija_msgBox_Info(){
 //kada kliknemo gumb OK
 void MainWindow::on_OKgumb_clicked()
 {
+    //INICIJALNI PARAMETRI
+    mBox.ucitavanjeMsgBoxPar();
+    QPixmap ikonaMsgBox (":/resursi/icons/cat.ico");
+    if (msgBox.windowTitle()=="") { msgBox.setWindowTitle("Prozor"); }
+    msgBox.setWindowIcon(ikonaMsgBox);
+    fontMsgBox.setFamily(mBox.fontFam);
+    fontMsgBox.setPixelSize(mBox.fontSiz);
+    fontMsgBox.setKerning(mBox.fontKer);
+    fontMsgBox.setItalic(mBox.fontIta);
+    fontMsgBox.setBold(mBox.fontBol);
+    fontMsgBox.setStrikeOut(mBox.fontStrik);
+    fontMsgBox.setUnderline(mBox.fontUnderl);
+    fontMsgBox.setPointSize(mBox.pointSiz);
+    msgBox.setButtonText(1,mBox.btnTxt);
+    msgBox.setFont(fontMsgBox);
+
     //pokreće timer koji pokreće učitavanje i postavljanje parametara
     on_click_timer_msgBox_OK->start(100);
 

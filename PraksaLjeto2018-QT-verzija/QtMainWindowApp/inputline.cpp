@@ -26,7 +26,7 @@ void inputline::ucitavanjeInputPar(){
             int prviNavodnici = linija.indexOf("\"", 0);
             int drugiNavodnici = linija.indexOf("\"", prviNavodnici+1);
             QString s = QString::number(drugiNavodnici);
-            int duljinaPar = drugiNavodnici-prviNavodnici-1;
+            int duljinaPar = drugiNavodnici-prviNavodnici-2;
             QString par = linija.mid(prviNavodnici+1,duljinaPar);
                 if (linija.contains("placeholderText:",Qt::CaseSensitive)){ placeholderTxt = par;}
                 else if (linija.contains("fontFamily:",Qt::CaseSensitive)){ fontFam = par;}

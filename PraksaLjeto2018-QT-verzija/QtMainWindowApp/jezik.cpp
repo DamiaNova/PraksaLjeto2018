@@ -17,7 +17,7 @@ void jezik::ucitavanjeParametara(QString putanja){
             QString linija = parametri.readLine();
             int prviNavodnici = linija.indexOf("\"", 0);
             int drugiNavodnici = linija.indexOf("\"", prviNavodnici+1);
-            int duljinaPar = drugiNavodnici-prviNavodnici-1;
+            int duljinaPar = drugiNavodnici-prviNavodnici-2;
             QString s = QString::number(drugiNavodnici);
             QString par = linija.mid(prviNavodnici+1,duljinaPar);
                 if (linija.contains("menuJezik:",Qt::CaseSensitive)){ menuJez = par;}
